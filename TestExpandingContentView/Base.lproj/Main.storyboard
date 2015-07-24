@@ -29,7 +29,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="6jz-BC-l72"/>
                                                     <constraint firstAttribute="width" constant="106" id="Kcg-7U-62h"/>
                                                 </constraints>
-                                                <state key="normal" title="Magic Button">
+                                                <state key="normal" title="Button A">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -66,7 +66,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="jsX-Eu-n0p"/>
                                                     <constraint firstAttribute="width" constant="97" id="u48-aS-WYj"/>
                                                 </constraints>
-                                                <state key="normal" title="More Magic">
+                                                <state key="normal" title="Button B">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -87,7 +87,7 @@
                                                     <constraint firstAttribute="width" constant="35" id="Get-qt-UhT"/>
                                                     <constraint firstAttribute="height" constant="30" id="I25-FM-DFs"/>
                                                 </constraints>
-                                                <state key="normal" title="Hello">
+                                                <state key="normal" title="Button C">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
