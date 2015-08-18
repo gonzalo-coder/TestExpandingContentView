@@ -14,7 +14,6 @@
 		DFFFE5691B50C33000669604 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFFE5681B50C33000669604 /* Images.xcassets */; };
 		DFFFE56C1B50C33000669604 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFFFE56A1B50C33000669604 /* LaunchScreen.xib */; };
 		DFFFE5781B50C33000669604 /* TestExpandingContentViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFFE5771B50C33000669604 /* TestExpandingContentViewTests.m */; };
-		DFFFE5831B50C76A00669604 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFFFE5821B50C76A00669604 /* Reveal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +40,6 @@
 		DFFFE5711B50C33000669604 /* TestExpandingContentViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestExpandingContentViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFFFE5761B50C33000669604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFFFE5771B50C33000669604 /* TestExpandingContentViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestExpandingContentViewTests.m; sourceTree = "<group>"; };
-		DFFFE5821B50C76A00669604 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFFFE5831B50C76A00669604 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +65,6 @@
 			children = (
 				DFFFE55A1B50C33000669604 /* TestExpandingContentView */,
 				DFFFE5741B50C33000669604 /* TestExpandingContentViewTests */,
-				DFFFE5811B50C71C00669604 /* Frameworks */,
 				DFFFE5591B50C33000669604 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,15 +117,6 @@
 				DFFFE5761B50C33000669604 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DFFFE5811B50C71C00669604 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DFFFE5821B50C76A00669604 /* Reveal.framework */,
-			);
-			name = Frameworks;
-			path = TestExpandingContentView.xcodeproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,12 +355,7 @@
 				);
 				INFOPLIST_FILE = TestExpandingContentView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lz",
-					"-framework",
-					Reveal,
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -388,12 +370,7 @@
 				);
 				INFOPLIST_FILE = TestExpandingContentView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lz",
-					"-framework",
-					Reveal,
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -451,6 +428,7 @@
 				DFFFE57D1B50C33000669604 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFFFE57E1B50C33000669604 /* Build configuration list for PBXNativeTarget "TestExpandingContentViewTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +437,7 @@
 				DFFFE5801B50C33000669604 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
