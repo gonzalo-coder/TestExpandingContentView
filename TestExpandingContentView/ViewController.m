@@ -12,12 +12,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *topButton;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIView *contentView;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *magicExpanderViewHeightConstraint;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *moreMagicExpanderViewHeightConstraint;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *expanderViewAHeightConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *expanderViewBHeightConstraint;
 
-- (IBAction)magicAction:(id)sender;
-- (IBAction)moreMagicAction:(id)sender;
 @end
 
 @implementation ViewController
@@ -26,18 +23,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self setAutomaticallyAdjustsScrollViewInsets:NO];
 }
 
 - (void)viewDidLayoutSubviews
 {
-    self.scrollView.contentSize = self.contentView.frame.size;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.scrollView.contentSize = self.contentView.bounds.size;
 }
 
 - (void)adjustContentSizeToContentView
@@ -45,16 +35,15 @@
     self.scrollView.contentSize = self.contentView.bounds.size;
 }
 
-- (IBAction)magicAction:(id)sender
+- (IBAction)buttonAAction:(id)sender
 {
-    BOOL isOpen = (self.magicExpanderViewHeightConstraint.constant > 2.0);
+    BOOL isOpen = (self.expanderViewAHeightConstraint.constant > 2.0);
     
     [UIView animateWithDuration:0.25f
                           delay:0.0
                         options:UIViewAnimationOptionLayoutSubviews
                      animations:^{
-                         self.magicExpanderViewHeightConstraint.constant = isOpen ? 2.0 : 100.0;
-                         self.contentViewHeightConstraint.constant += isOpen ? -100 : 100.0;
+                         self.expanderViewAHeightConstraint.constant = isOpen ? 2.0 : 100.0;
                          [self.contentView layoutIfNeeded];
                      }
                      completion:^(BOOL finished) {
@@ -62,16 +51,15 @@
                      }];
 }
 
-- (IBAction)moreMagicAction:(id)sender
+- (IBAction)buttonBAction:(id)sender
 {
-    BOOL isOpen = (self.moreMagicExpanderViewHeightConstraint.constant > 2.0);
+    BOOL isOpen = (self.expanderViewBHeightConstraint.constant > 2.0);
 
     [UIView animateWithDuration:0.25f
                           delay:0.0
                         options:UIViewAnimationOptionLayoutSubviews
                      animations:^{
-                         self.moreMagicExpanderViewHeightConstraint.constant = isOpen ? 2.0 : 100.0;
-                         self.contentViewHeightConstraint.constant += isOpen ? -100 : 100.0;
+                         self.expanderViewBHeightConstraint.constant = isOpen ? 2.0 : 100.0;
                          [self.contentView layoutIfNeeded];
                      }
                      completion:^(BOOL finished) {
