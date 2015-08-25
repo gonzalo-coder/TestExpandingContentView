@@ -258,7 +258,6 @@
                         <outlet property="expanderViewAHeightConstraint" destination="8R6-2g-ypX" id="WJ4-un-3eC"/>
                         <outlet property="expanderViewBHeightConstraint" destination="KJs-aN-P4H" id="Asb-s9-WeG"/>
                         <outlet property="scrollView" destination="rp9-sE-rCY" id="Uql-BN-V0v"/>
-                        <outlet property="topButton" destination="mMk-9k-1rX" id="8ds-cv-OdR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (nonatomic, weak) IBOutlet UIButton *topButton;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIView *contentView;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *expanderViewAHeightConstraint;
@@ -19,15 +18,10 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)viewDidLayoutSubviews
-{
-    self.scrollView.contentSize = self.contentView.bounds.size;
+    [super viewDidAppear:animated];
+    [self adjustContentSizeToContentView];
 }
 
 - (void)adjustContentSizeToContentView
@@ -37,33 +31,39 @@
 
 - (IBAction)buttonAAction:(id)sender
 {
+    CGPoint offset = self.scrollView.contentOffset;
+
     BOOL isOpen = (self.expanderViewAHeightConstraint.constant > 2.0);
-    
+    self.expanderViewAHeightConstraint.constant = isOpen ? 2.0 : 100.0;
+
     [UIView animateWithDuration:0.25f
                           delay:0.0
                         options:UIViewAnimationOptionLayoutSubviews
                      animations:^{
-                         self.expanderViewAHeightConstraint.constant = isOpen ? 2.0 : 100.0;
-                         [self.contentView layoutIfNeeded];
+                         [self.scrollView layoutIfNeeded];
+                         self.scrollView.contentOffset = offset;
+                         [self adjustContentSizeToContentView];
                      }
                      completion:^(BOOL finished) {
-                         [self adjustContentSizeToContentView];
                      }];
 }
 
 - (IBAction)buttonBAction:(id)sender
 {
+    CGPoint offset = self.scrollView.contentOffset;
+
     BOOL isOpen = (self.expanderViewBHeightConstraint.constant > 2.0);
+    self.expanderViewBHeightConstraint.constant = isOpen ? 2.0 : 100.0;
 
     [UIView animateWithDuration:0.25f
                           delay:0.0
                         options:UIViewAnimationOptionLayoutSubviews
                      animations:^{
-                         self.expanderViewBHeightConstraint.constant = isOpen ? 2.0 : 100.0;
-                         [self.contentView layoutIfNeeded];
+                         [self.scrollView layoutIfNeeded];
+                         self.scrollView.contentOffset = offset;
+                         [self adjustContentSizeToContentView];
                      }
                      completion:^(BOOL finished) {
-                         [self adjustContentSizeToContentView];
                      }];
 }
 
